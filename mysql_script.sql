@@ -1,3 +1,4 @@
+use mvn_db;
 CREATE TABLE mvn_user(
   ur_id int(11) NOT NULL AUTO_INCREMENT,
   ur_user_name varchar(255) DEFAULT NULL,

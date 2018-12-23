@@ -20,6 +20,7 @@ public class SearchUsersServlet extends HttpServlet {
 	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("响应首页的查询");
 		UserService userService = new UserService();
 		List<MvnUser> userList = userService.searchUsers();
 		// 将查询出的用户集合，写于request属性中

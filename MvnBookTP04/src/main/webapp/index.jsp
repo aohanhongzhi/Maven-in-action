@@ -10,9 +10,9 @@
 		// 页面加载完后，自动发searchUsersServlet请求，加载到userListDiv中显示
 		$("#userListDiv").load("searchUsersServlet");
 	});
-    // 新增 按钮事件触发函数
+	// 新增 按钮事件触发函数
 	function toAdd() {
-    	// 获取addForm中的请求信息
+		// 获取addForm中的请求信息
 		var _data = $("#addForm").serialize();
 		//alert(_data);
 		// 发添加新用户的Ajax请求

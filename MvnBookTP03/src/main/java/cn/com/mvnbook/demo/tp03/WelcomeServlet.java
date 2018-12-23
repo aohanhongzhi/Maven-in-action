@@ -23,6 +23,7 @@ public class WelcomeServlet extends HttpServlet {
 		String name = request.getParameter("name");
 		String welcome = "Hello," + name;
 		request.setAttribute("welcome", welcome);
+		//原本是index.jsp，更正下！
 		request.getRequestDispatcher("/welcome.jsp").forward(request, response);
 	}
 
