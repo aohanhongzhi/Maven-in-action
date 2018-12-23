@@ -1,0 +1,39 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>cn.com.mvnbook.pom</groupId>
+		<artifactId>SpringPOM</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<groupId>cn.com.mvnbook.ssm.demo</groupId>
+	<artifactId>MvnBookSSMDemo.Service.Impl</artifactId>
+	<packaging>jar</packaging>
+
+	<name>MvnBookSSMDemo.Service.Impl</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>cn.com.mvnbook.ssh.demo</groupId>
+			<artifactId>MvnBookSSHDemo.DAO</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>cn.com.mvnbook.ssh.demo</groupId>
+			<artifactId>MvnBookSSHDemo.Service</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>cn.com.mvnbook.ssm.demo</groupId>
+			<artifactId>MvnBookSSMDemo.DAO.MyBatis</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+</project>

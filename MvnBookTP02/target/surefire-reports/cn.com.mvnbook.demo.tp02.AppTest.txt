@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: cn.com.mvnbook.demo.tp02.AppTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.065 sec - in cn.com.mvnbook.demo.tp02.AppTest

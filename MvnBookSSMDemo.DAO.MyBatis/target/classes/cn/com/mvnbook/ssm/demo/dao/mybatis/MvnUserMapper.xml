@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.com.mvnbook.ssm.demo.dao.mybatis.impl.IMvnUserDAO4MyBatis">
+   <resultMap type="cn.com.mvnbook.ssh.demo.entity.MvnUser" id="UserMap">
+      <id column="ur_id" property="urId"/>
+      <result column="ur_user_name" property="urUserName" />
+      <result column="ur_password" property="urPassword"/>
+      <result column="ur_age" property="urAge"/>
+      <result column="ur_status" property="urStatus"/>
+   </resultMap>
+   <insert id="addUser" useGeneratedKeys="true" keyProperty="urId" 
+                parameterType="cn.com.mvnbook.ssh.demo.entity.MvnUser">
+      insert into mvn_user (ur_user_name,ur_password,ur_age,ur_status)
+                         values (#{urUserName},#{urPassword},#{urAge},#{urStatus})
+   </insert>
+   <update id="update" parameterType="cn.com.mvnbook.ssh.demo.entity.MvnUser">
+      update mvn_user set ur_age=#{urAge},ur_status=#{urStatus} where ur_id=#{urId}
+   </update>
+   <delete id="deleteUser" parameterType="cn.com.mvnbook.ssh.demo.entity.MvnUser">
+      delete from mvn_user where ur_id=#{urId} 
+   </delete>
+   <select id="findUserById" resultMap="UserMap" parameterType="int">
+      select * from mvn_user where ur_id=#{id}
+   </select>
+   <select id="findUserByUserName" resultMap="UserMap" parameterType="java.lang.String">
+      select * from mvn_user where ur_user_name=#{userName}
+   </select>
+   <select id="findUsers" resultMap="UserMap">
+      select * from mvn_user order by ur_id
+   </select>
+   
+</mapper>

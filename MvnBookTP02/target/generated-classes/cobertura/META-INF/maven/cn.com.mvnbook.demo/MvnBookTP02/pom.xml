@@ -1,0 +1,117 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>cn.com.mvnbook.demo</groupId>
+  <artifactId>MvnBookTP02</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>MvnBookTP02</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.7</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+  <build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.19.1</version>
+				<configuration>
+					<!--设置包含的测试类 -->
+					<includes>
+						<include>******</include>
+					</includes>
+					<!-- 设置不进行测试类 -->
+					<excludes>
+						<exclude>Test*</exclude>
+					</excludes>
+					<!-- 跳过测试阶段，測試類写的有问题也会出错，一般不推荐 -->
+					<!--<skip>true</skip> -->
+				</configuration>
+			</plugin>
+			
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.7</version>
+				<configuration>  
+                    <aggregate>true</aggregate>  
+                </configuration>  
+                <executions>  
+                    <execution>  
+                        <id>attach-javadocs</id>  
+                        <goals>  
+                            <goal>jar</goal>  
+                        </goals>  
+                       <!--执行maven test的时候运行插件-->
+                        <phase>test</phase>
+                    </execution>  
+                </executions>  
+			</plugin>
+			
+			<!-- 构建项目站点报告插件 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-site-plugin</artifactId>
+				<version>3.0-beta-3</version>
+				<configuration>
+					<!-- 配置站点国际化 -->
+					<locales>zh_CN</locales>
+					<!-- 输出编码 -->
+					<outputEncoding>GBK</outputEncoding>
+				</configuration>
+			</plugin>
+			<!-- 单元测试报告html -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-report-plugin</artifactId>
+				<version>2.12.2</version>
+				<configuration>
+					<showSuccess>true</showSuccess>
+				</configuration>
+				<executions>
+					<execution>
+						<id>test-report</id>
+						
+						<phase>test</phase>
+					</execution>
+				</executions>
+			</plugin>
+
+			<!-- 测试覆盖率的报告 -->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>cobertura-maven-plugin</artifactId>
+				<version>2.5.1</version>
+				<configuration>
+					<formats>
+						<format>html</format>
+						<format>xml</format>
+					</formats>
+				</configuration>
+				<executions>
+					<execution>
+						<id>cobertura-report</id>
+						<goals>
+							<goal>cobertura</goal>
+						</goals>
+						<phase>test</phase>
+					</execution>
+				</executions>
+			</plugin>
+			
+		</plugins>
+	</build>
+</project>

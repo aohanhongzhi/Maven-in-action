@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <faqs xmlns="http://maven.apache.org/FML/1.0.1"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://maven.apache.org/FML/1.0.1 http://maven.apache.org/xsd/fml-1.0.1.xsd"
+      title="常见问题"
+      toplink="false">
+     
+      <part id="general">
+        <title>基本问题</title>
+        <faq id="whats-foo">
+          <question>
+            Maven是什么?
+          </question>
+          <answer>
+            <p>由骨架文件配置好所有的插件和依赖，再用固定命令构建项目的工具</p>
+     
+            <source>
+            <![CDATA[
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>cn.com.mvnbook.pom</groupId>
+		<artifactId>SpringPOM</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<groupId>cn.com.mvnbook.ssm.demo</groupId>
+	<artifactId>MvnBookSSMDemo.Service.Impl</artifactId>
+	<packaging>jar</packaging>
+... ...
+</project>
+]]>
+            </source>
+            <p>上面是pom.xml骨架文件的简单样例</p>
+          </answer>
+        </faq>
+     
+        <faq id="whats-bar">
+          <question>
+            What is Bar?
+          </question>
+          <answer>
+            <p>some markup goes here</p>
+          </answer>
+        </faq>
+      </part>
+     
+      <part id="install">
+        <title>Installation</title>
+        <faq id="how-install">
+          <question>
+            How do I install Foo?
+          </question>
+          <answer>
+            <p>some markup goes here</p>
+          </answer>
+        </faq>
+      </part>
+</faqs>

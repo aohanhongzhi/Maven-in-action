@@ -1,0 +1,149 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>cn.com.mvnbook.demo</groupId>
+	<artifactId>MvnBookTP03</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+
+	<name>MvnBookTP03 Web App</name>
+
+	<properties>
+		<endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-web-api</artifactId>
+			<version>6.0</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.8.1</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.mortbay.jetty</groupId>
+				<artifactId>maven-jetty-plugin</artifactId>
+				<version>6.1.26</version>
+				<configuration>
+					<webAppSourceDirectory>${basedir}/src/main/webapp</webAppSourceDirectory>
+				</configuration>
+			</plugin>
+<plugin>
+	<!-- 指定插件名称及版本号 -->
+	<groupId>org.codehaus.cargo</groupId>
+	<artifactId>cargo-maven2-plugin</artifactId>
+	<version>1.4.8</version>
+	<configuration>
+	        <!--是否说明，操作start、stop等后续操作必须等前面操作完成才能继续 -->
+		<wait>true</wait>	
+        <!-- 容器的配置 -->   
+		<container>	
+            <!-- 指定tomcat版本 -->		   
+			<containerId>tomcat7x</containerId>		
+            <!-- 指定类型：standalone, installed等 -->			 
+			<type>installed</type>	
+            <!-- 指定Tomcat的位置，即catalina.home -->							  
+			<home>C:\work\servers\apache-tomcat-7.0.69</home>	
+		</container>
+        <!-- 具体的配置 -->
+		<configuration>	
+            <!-- 类型，existing:存在 -->	   
+			<type>existing</type>			
+            <!-- Tomcat的位置，即catalina.home -->					   
+			<home>C:\work\servers\apache-tomcat-7.0.69</home>	
+		</configuration>
+		<deployables>								 <!-- 部署设置 -->
+			<deployable>							  <!-- 部署的War包名等 -->
+				<groupId>cn.com.mvnbook.demo</groupId>
+				<artifactId>MvnBookTP03</artifactId>
+				<type>war</type>
+				<properties>
+					<context>MvnBookTP03</context>   <!-- 部署路径 -->
+				</properties>
+			</deployable>
+		</deployables>
+		<deployer>											<!-- 部署配置 -->
+			<type>installed</type>						  <!-- 类型 -->
+		</deployer>
+	</configuration>
+	<executions>
+		<!-- 执行的动作 -->
+		<execution>
+			<id>verify-deployer</id>
+			<phase>install</phase>	  <!-- 解析install -->
+			<goals>
+				<goal>deployer-deploy</goal>
+			</goals>
+		</execution>
+		<execution>
+			<id>clean-deployer</id>
+			<phase>clean</phase>
+			<goals>
+				<goal>deployer-undeploy</goal>
+			</goals>
+		</execution>
+	</executions>
+</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+					<compilerArguments>
+						<endorseddirs>${endorsed.dir}</endorseddirs>
+					</compilerArguments>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.1</version>
+				<configuration>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<version>2.1</version>
+				<executions>
+					<execution>
+						<phase>validate</phase>
+						<goals>
+							<goal>copy</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${endorsed.dir}</outputDirectory>
+							<silent>true</silent>
+							<artifactItems>
+								<artifactItem>
+									<groupId>javax</groupId>
+									<artifactId>javaee-endorsed-api</artifactId>
+									<version>6.0</version>
+									<type>jar</type>
+								</artifactItem>
+							</artifactItems>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+		<finalName>MvnBookTP03</finalName>
+	</build>
+
+</project>

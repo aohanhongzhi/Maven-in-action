@@ -1,0 +1,95 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>cn.com.mvnbook.ssm.demo</groupId>
+  <artifactId>MvnBookSSMDemo</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <name>MvnBookSSMDemo</name>
+  <url>http://maven.apache.org</url>
+   <organization>
+		<name>Organization</name>
+		<url>http://www.mvnbook.com</url>
+	</organization>
+	<issueManagement>
+		<system>admin</system>
+		<url>http://www.mvnbook.com/issue</url>
+	</issueManagement>
+	<ciManagement>
+		<system>admin</system>
+		<url>http://www.mvnbook.com/continuous</url>
+	</ciManagement>
+	<description>这是MvnBook的SSM Demo集成项目</description>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+  <modules>
+  	<module>../MvnBookSSHDemo.DAO</module>
+  	<module>../MvnBookSSHDemo.Service</module>
+  	<module>../MvnBookSSMDemo.DAO.MyBatis</module>
+  	<module>../MvnBookSSMDemo.Service.Impl</module>
+  	<module>../MvnBookSSMDemo.SpringMVC</module>
+  </modules>
+<!--
+  <build>
+	<pluginManagement>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-site-plugin</artifactId>
+				<version>3.4</version>
+			</plugin>
+		</plugins>
+	</pluginManagement>
+
+	<plugin>
+	<groupId>org.apache.maven.plugins</groupId>
+	<artifactId>maven-jxr-plugin</artifactId>
+	<version>2.4</version>
+</plugin>
+<plugin>
+	<groupId>org.codehaus.mojo</groupId>
+	<artifactId>cobertura-maven-plugin</artifactId>
+	<version>2.6</version>
+</plugin>
+<plugin>
+	<groupId>org.apache.maven.plugins</groupId>
+	<artifactId>maven-pmd-plugin</artifactId>
+	<version>2.5</version>
+</plugin>
+<plugin>
+	<groupId>org.apache.maven.plugins</groupId>
+	<artifactId>maven-pmd-plugin</artifactId>
+	<version>2.5</version>
+	<configuration>
+	   <rulesets>
+	     <ruleset>rulesets/braces.xml</ruleset>
+	     <ruleset>rulesets/strings.xml</ruleset>
+	   </rulesets>
+	</configuration>
+</plugin>
+
+</build>
+<reporting>
+	<plugins>
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-javadoc-plugin</artifactId>
+			<version>2.10.3</version>
+		</plugin>
+	</plugins>
+</reporting>
+-->
+</project>

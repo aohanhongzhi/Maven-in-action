@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+  <include file="struts-default.xml"></include>
+  <include file="struts-plugin.xml"></include>
+  <!-- 从Spring容器中获取Action对象 -->
+  <constant name="struts.objectFactory" value="spring"></constant>
+  <!-- 请求和Action方法的动态对应 -->
+  <constant name="struts.enable.DynamicMethodInvocation" value="true"/>
+  <package name="t" namespace="/" extends="json-default">
+     <action name="userAction" class="userAction">
+        <result name="searchUsersSuccess">/userList.jsp</result>
+        <result name="searchUserSeuccess" type="json">
+           <param name="root">user</param>
+        </result>
+        <result name="editSuccess" type="json">
+           <param name="root">message</param>
+        </result>
+        <result name="deleteSuccess" type="json">
+           <param name="root">message</param>
+        </result>
+        <result name="addSuccess" type="json">
+           <param name="root">message</param>
+        </result>
+     </action>
+  </package>
+</struts>

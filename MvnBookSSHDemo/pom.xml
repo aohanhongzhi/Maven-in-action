@@ -1,0 +1,41 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>cn.com.mvnbook.ssh.demo</groupId>
+	<artifactId>MvnBookSSHDemo</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<name>MvnBookSSHDemo</name>
+	<url>http://maven.apache.org</url>
+    <modules>
+		<module>../MvnBookSSHDemo.DAO</module>
+		<module>../MvnBookSSHDemo.DAO.Hibernate</module>
+		<module>../MvnBookSSHDemo.Service</module>
+		<module>../MvnBookSSHDemo.Service.impl</module>
+		<module>../MvnBookSSHDemo.Struts</module>
+	</modules>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<dependencies>
+
+	</dependencies>
+	<build>
+		<plugins>
+			
+		</plugins>
+	</build>
+	<distributionManagement>
+		<repository>
+			<id>archivaServer</id>
+			<url>http://localhost:8080/repository/internal</url>
+		</repository>
+		<snapshotRepository>
+			<id>archivaServer</id>
+			<url>http://localhost:8080/repository/snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
+</project>
